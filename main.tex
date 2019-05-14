@@ -1,5 +1,39 @@
-\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\oddsidemargin  0.0in
+\evensidemargin 0.0in
+\textwidth      6.7in
+\headheight     0.0in
+\topmargin      0.0in
+\textheight     9.0in
+\hoffset       -0.2in
+\voffset       -0.2in
+
 \usepackage[utf8]{inputenc}
+\usepackage[top=2cm,right=2cm, left=2cm, bottom=2cm]{geometry}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
 
 \title{SpetralAlphaStable}
 \author{Yanghong Huang}
@@ -12,5 +46,10 @@
 \input intro.tex
 \input sprel.tex
 \input numerics.tex
+
+
+
+\bibliographystyle{plain}
+\bibliography{biospasy}
 
 \end{document}
