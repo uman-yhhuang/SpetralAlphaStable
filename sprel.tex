@@ -30,5 +30,29 @@ integral becomes
 where $\Gamma(z)$ is the Euler Gamma function, $B(a,b)=\int_0^1 \eta^{a-1}(1-\eta)^{b-1}d\eta
 =\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}$ is the Beta function
 and ${ }_1F_1(a;b;z)$ is the confluence hypergeometric function.
+
+Because of $\mathcal{A}Q_n^{(a,b)}$ is a real function, its representation as 
+an inverse Fourier transform can be  written as 
+\begin{multline}
+  \mathcal{A}Q_n^{(a,b)} = \frac{1}{\pi} \Re \int_0^\infty 
+  e^{ix\xi} \psi(\xi) \widehat{Q_n^{(a,b)}}(\xi)d\xi 
+  = \frac{2^{a+b+n+1}}{\pi n!}B(a+n+1,b+n+1)\cr
+  \Re\left[ e^{-i\pi\gamma} (-i)^n
+  \int_0^\infty \xi^{n+\alpha} e^{i(x+1)\xi}
+{ }_1F_1(b+n+1;a+b+2n+2;-2i\xi)d\xi\right].
+\label{eq:infaq}
+\end{multline}
+From the asymptotic expansion 
+\begin{align*}
+    { }_1F_1(a;b;-2iz) 
+    %&= \frac{\Gamma(b)}{\Gamma(a)\Gamma(b-a)}
+    %  \int_0^1 e^{-2iuz} u^{a-1}(1-u)^{b-a-1}du \cr
+    =\frac{\Gamma(b)}{\Gamma(b-a)}
+    \sum_{k=0}^\infty \frac{(a+1-b)_k(a)_k}{k!}(2iz)^{-a-k}
+    +\frac{\Gamma(b)}{\Gamma(a)}
+    e^{-2i\xi} \sum_{k=0}^\infty \frac{(1-a)_k(b-a)_k}{k!}(-2iz)^{a-b-k},
+  \end{align*}
+  the last integral in Eq.~\eqref{eq:infaq} is convergent for 
+  $\alpha \in (-n-1, \min(a+1,b+1))$.
 \begin{lem}
 \end{lem}
