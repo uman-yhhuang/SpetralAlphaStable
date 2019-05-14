@@ -5,7 +5,30 @@ From the equivalent definition given by Rodrigues' formula
   P_{n}^{(a,b)}(z) = \frac{(-1)^n}{2^nn!} (1-z)^{-a}(1+z)^{-b}
   \frac{d^n}{dz^n} (1-z)^{a+n}(1+z)^{b+n},
 \]
-we can get the Fourier transform of $q_n^{(a,b)}(z) = (1-z)^a(1+z)^bp_n^{(a,b)}(z)$
-restricted on the interval $[-1,1]$ as in the following lemma.
+the Fourier transform of $Q_n^{(a,b)}(z) = (1-z)^a(1+z)^bP_n^{(a,b)}(z)$
+restricted on the interval $[-1,1]$ is 
+\begin{align*}
+  \int_{-1}^1 e^{-i\xi x} Q_n^{(a,b)}(x)dx
+  %  = \frac{(-1)^n}{2^nn!} \int_{-1}^1 e^{-i\xi x} 
+  %\frac{d^n}{dx^n} (1-x)^{a+n}(1+x)^{b+n} dx
+  = \frac{(-i\xi)^n}{2^nn!}\int_{-1}^1 e^{-i\xi x} (1-x)^{a+n}(1+x)^{b+n}dx,
+\end{align*}
+using integration by parts repeatedly. Using the change of variable $x = 2\eta-1$, the last 
+integral becomes 
+\begin{align*}
+  &\quad \frac{(-i\xi)^n}{n!} 2^{a+b+n+1}e^{i\xi}
+  \int_0^1 e^{-2i\xi\eta}(1-\eta)^{a+n}\eta^{b+n} d\eta\cr
+  &= \frac{(-i\xi)^n}{n!} 2^{a+b+n+1}e^{i\xi}\sum_{k=0}^\infty \frac{(-2i\xi)^k}{k!}
+  \int_0^1 (1-\eta)^{a+b}\eta^{b+n+k}d\eta\cr
+  &= 
+  \frac{(-i\xi)^n}{n!} 2^{a+b+n+1}e^{i\xi}\sum_{k=0}^\infty \frac{(-2i\xi)^k}{k!}
+  \frac{\Gamma(a+n+1)\Gamma(b+n+k+1)}{\Gamma(a+b+2n+k+2)} \cr
+%  \int_0^1 (1-\eta)^{a+n}\eta^{b+n+k}d\eta\cr
+  &= \frac{(-i\xi)^n}{n!} 2^{a+b+n+1}e^{i\xi}B(a+n+1,b+n+1)
+  { }_1F_1(b+n+1;a+b+2n+2;-2i\xi).
+\end{align*}
+where $\Gamma(z)$ is the Euler Gamma function, $B(a,b)=\int_0^1 \eta^{a-1}(1-\eta)^{b-1}d\eta
+=\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}$ is the Beta function
+and ${ }_1F_1(a;b;z)$ is the confluence hypergeometric function.
 \begin{lem}
 \end{lem}
